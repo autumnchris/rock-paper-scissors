@@ -37,6 +37,7 @@ h1 {
   color: #006699;
   font: 2.8rem Boogaloo, sans-serif;
   letter-spacing: 4px;
+  text-transform: uppercase; 
 }
 
 h2 {
