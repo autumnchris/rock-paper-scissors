@@ -84,6 +84,22 @@ button .far {
   margin-bottom: 5px;
 }
 
+table {
+  border-collapse: collapse;
+  margin: 30px auto 0;
+}
+
+th {
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #333;
+  padding: 6px 12px;
+}
+
+td {
+  font-size: 2rem;
+  padding: 6px;
+}
+
 footer {
   background-color: #e6e6e6;
   bottom: 0;
