@@ -56,6 +56,34 @@ body {
   padding: 25px;
 }
 
+button,
+button:active,
+button:focus {
+  background-color: #006699;
+  border: 2px solid #006699;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin: 0 3px;
+  padding: 8px;
+  width: 80px;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #006699;
+}
+
+#start {
+  width: 100px;
+}
+
+button .far {
+  display: block;
+  margin-bottom: 5px;
+}
+
 footer {
   background-color: #e6e6e6;
   bottom: 0;
