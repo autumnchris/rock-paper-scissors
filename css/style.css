@@ -33,6 +33,17 @@ body {
   text-align: center;
 }
 
+h1 {
+  color: #006699;
+  font: 2.8rem Boogaloo, sans-serif;
+  letter-spacing: 4px;
+}
+
+h2 {
+  font: 2.2rem Boogaloo, sans-serif;
+  letter-spacing: 2px;
+}
+
 #modal {
   background-color: rgba(0,0,0,0.75);
   height: 100%;
