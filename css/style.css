@@ -33,6 +33,29 @@ body {
   text-align: center;
 }
 
+#modal {
+  background-color: rgba(0,0,0,0.75);
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 15% auto;
+  max-width: 500px;
+  width: 70%;
+}
+
+.modal-body {
+  padding: 25px;
+}
+
 footer {
   background-color: #e6e6e6;
   bottom: 0;
