@@ -21,3 +21,9 @@ function startGame() {
   document.getElementById('player-score').innerHTML = playerScore;
   document.getElementById('computer-score').innerHTML = computerScore;
 }
+
+// EVENT LISTENERS
+
+document.getElementById('start').addEventListener('click', function() {
+  startGame();
+});
