@@ -98,3 +98,9 @@ function playRound(elem) {
 document.getElementById('start').addEventListener('click', function() {
   startGame();
 });
+
+document.querySelectorAll('.move-options').forEach(function(button) {
+  button.addEventListener('click', function() {
+    playRound(this);
+  });
+});
