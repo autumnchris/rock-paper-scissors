@@ -1,30 +1,25 @@
 var round,
-roundNum,
 result,
 playerScore,
-computerScore,
-endGameMsg;
+computerScore;
 
 // FUNCTIONS
 
 function startGame() {
   document.getElementById('modal').style.display = 'none';
 
-  round = 'Round 1: Select Rock, Paper, or Scissors.';
-  roundNum = 1;
-  result = '';
+  round = 1;
   playerScore = 0;
   computerScore = 0;
 
-  document.getElementById('round').innerHTML = round;
-  document.getElementById('result').innerHTML = result;
+  document.getElementById('round').innerHTML = 'Round ' + round + ': Select Rock, Paper, or Scissors.';
+  document.getElementById('result').innerHTML = '';
   document.getElementById('player-score').innerHTML = playerScore;
   document.getElementById('computer-score').innerHTML = computerScore;
 }
 
 function playRound(elem) {
-  roundNum++;
-  round = 'Round ' + roundNum + ': Select Rock, Paper, or Scissors.';
+  round++;
   var moveOptions = [
     'rock',
     'paper',
@@ -78,16 +73,15 @@ function playRound(elem) {
     document.getElementById('modal').style.display = 'block';
 
     if (playerScore === 5) {
-      endGameMsg = 'Congratulations! You won 5 rounds before the computer did.'
+      document.querySelector('.modal-body p').innerHTML = 'Congratulations! You won 5 rounds before the computer did.';
     }
     else {
-      endGameMsg = 'Too bad. The computer won 5 rounds before you.';
+      document.querySelector('.modal-body p').innerHTML = 'Too bad. The computer won 5 rounds before you.';
     }
-    document.querySelector('.modal-body p').innerHTML = endGameMsg;
     document.getElementById('start').innerHTML = 'Play Again';
   }
 
-  document.getElementById('round').innerHTML = round;
+  document.getElementById('round').innerHTML = 'Round ' + round + ': Select Rock, Paper, or Scissors.';
   document.getElementById('result').innerHTML = result;
   document.getElementById('player-score').innerHTML = playerScore;
   document.getElementById('computer-score').innerHTML = computerScore;
