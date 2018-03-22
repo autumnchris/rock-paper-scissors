@@ -4,6 +4,14 @@ My project for the [Rock Paper Scissors assignment](https://www.theodinproject.c
 
 ---
 
+## Built With
+* JavaScript
+* CSS
+* HTML
+* [Font Awesome](https://fontawesome.com)
+* [Normalize.css](http://necolas.github.io/normalize.css)
+* [Google Fonts](https://fonts.google.com)
+
 ## Demo
 
 View project demo at [https://autumnchris.github.io/rock-paper-scissors](https://autumnchris.github.io/rock-paper-scissors).
