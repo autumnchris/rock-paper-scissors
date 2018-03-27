@@ -6,16 +6,16 @@ computerScore;
 // FUNCTIONS
 
 function startGame() {
-  document.getElementById('modal').style.display = 'none';
+  document.querySelector('.modal').style.display = 'none';
 
   round = 1;
   playerScore = 0;
   computerScore = 0;
 
-  document.getElementById('round').innerHTML = 'Round ' + round + ': Select Rock, Paper, or Scissors.';
-  document.getElementById('result').innerHTML = '';
-  document.getElementById('player-score').innerHTML = playerScore;
-  document.getElementById('computer-score').innerHTML = computerScore;
+  document.querySelector('.round').innerHTML = 'Round ' + round + ': Select Rock, Paper, or Scissors.';
+  document.querySelector('.result').innerHTML = '';
+  document.querySelector('.player-score').innerHTML = playerScore;
+  document.querySelector('.computer-score').innerHTML = computerScore;
 }
 
 function playRound(elem) {
@@ -70,7 +70,7 @@ function playRound(elem) {
   }
 
   if (playerScore === 5 || computerScore === 5) {
-    document.getElementById('modal').style.display = 'block';
+    document.querySelector('.modal').style.display = 'block';
 
     if (playerScore === 5) {
       document.querySelector('.modal-body p').innerHTML = 'Congratulations! You won 5 rounds before the computer did.';
@@ -78,18 +78,18 @@ function playRound(elem) {
     else {
       document.querySelector('.modal-body p').innerHTML = 'Too bad. The computer won 5 rounds before you.';
     }
-    document.getElementById('start').innerHTML = 'Play Again';
+    document.querySelector('.start').innerHTML = 'Play Again';
   }
 
-  document.getElementById('round').innerHTML = 'Round ' + round + ': Select Rock, Paper, or Scissors.';
-  document.getElementById('result').innerHTML = result;
-  document.getElementById('player-score').innerHTML = playerScore;
-  document.getElementById('computer-score').innerHTML = computerScore;
+  document.querySelector('.round').innerHTML = 'Round ' + round + ': Select Rock, Paper, or Scissors.';
+  document.querySelector('.result').innerHTML = result;
+  document.querySelector('.player-score').innerHTML = playerScore;
+  document.querySelector('.computer-score').innerHTML = computerScore;
 }
 
 // EVENT LISTENERS
 
-document.getElementById('start').addEventListener('click', function() {
+document.querySelector('.start').addEventListener('click', function() {
   startGame();
 });
 

@@ -14,15 +14,15 @@
     <!-- HEADER -->
     <header>
       <h1>Rock Paper Scissors</h1>
-      <h2 id="round">Round 1: Select Rock, Paper, or Scissors.</h2>
+      <h2 class="round">Round 1: Select Rock, Paper, or Scissors.</h2>
     </header>
     <main>
       <!-- START GAME MODAL -->
-      <div id="modal">
+      <div class="modal">
         <div class="modal-content">
           <div class="modal-body">
             <p>See if you can win 5 rounds of Rock Paper Scissors against the computer. Click Start to begin.</p>
-            <button type="button" id="start">Start</button>
+            <button type="button" class="start">Start</button>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
         <button type="button" class="move-options" id="scissors"><span class="far fa-hand-scissors fa-2x"></span>Scissors</button>
       </div>
       <!-- ROUND RESULT -->
-      <p id="result"></p>
+      <p class="result"></p>
       <!-- SCORE TABLE -->
       <table>
         <thead>
@@ -44,8 +44,8 @@
         </thead>
         <tbody>
           <tr>
-            <td id="player-score"></td>
-            <td id="computer-score"></td>
+            <td class="player-score"></td>
+            <td class="computer-score"></td>
           </tr>
         </tbody>
       </table>
