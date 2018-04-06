@@ -7,7 +7,6 @@ computerScore;
 
 function startGame() {
   document.querySelector('.modal').style.display = 'none';
-
   round = 1;
   playerScore = 0;
   computerScore = 0;
@@ -24,8 +23,8 @@ function playRound(elem) {
     'rock',
     'paper',
     'scissors'
-  ];
-  var computerMove = moveOptions[Math.floor(Math.random() * moveOptions.length)];
+  ],
+  computerMove = moveOptions[Math.floor(Math.random() * moveOptions.length)];
 
   switch(elem.id) {
     case 'rock':
