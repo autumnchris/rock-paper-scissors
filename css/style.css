@@ -79,6 +79,7 @@ h2 {
 }
 
 button,
+button:hover,
 button:active,
 button:focus {
   background-color: #006699;
@@ -90,11 +91,6 @@ button:focus {
   margin: 0 3px;
   padding: 8px;
   width: 80px;
-}
-
-button:hover {
-  background-color: #fff;
-  color: #006699;
 }
 
 .start,
