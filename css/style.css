@@ -24,6 +24,8 @@ html {
 }
 
 body {
+  background: #fff;
+  background: linear-gradient(120deg, rgba(153, 153, 153, 0.1), #fff) fixed;
   color: #333;
   font: 14px Helvetica, Arial, sans-serif;
   letter-spacing: 1px;
