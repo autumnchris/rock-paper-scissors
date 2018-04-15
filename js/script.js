@@ -6,7 +6,7 @@ computerScore;
 // FUNCTIONS
 
 function startGame() {
-  document.querySelector('.modal').style.display = 'none';
+  document.getElementById('modal').style.display = 'none';
   round = 1;
   playerScore = 0;
   computerScore = 0;
@@ -69,7 +69,7 @@ function playRound(elem) {
   }
 
   if (playerScore === 5 || computerScore === 5) {
-    document.querySelector('.modal').style.display = 'block';
+    document.getElementById('modal').style.display = 'block';
 
     if (playerScore === 5) {
       document.querySelector('.modal-body p').innerHTML = 'Congratulations! You won 5 rounds before the computer did.';
