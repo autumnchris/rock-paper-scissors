@@ -105,6 +105,7 @@ button:focus {
 button .far {
   display: block;
   margin-bottom: 5px;
+  pointer-events: none;
 }
 
 .result {
