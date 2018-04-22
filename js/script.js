@@ -1,7 +1,7 @@
-var round,
-result,
-playerScore,
-computerScore;
+let round;
+let result;
+let playerScore;
+let computerScore;
 
 // FUNCTIONS
 
@@ -11,22 +11,22 @@ function startGame() {
   playerScore = 0;
   computerScore = 0;
 
-  document.querySelector('.round').innerHTML = 'Round ' + round + ': Select Rock, Paper, or Scissors.';
+  document.querySelector('.round').innerHTML = `Round ${round}: Select Rock, Paper, or Scissors.`;
   document.querySelector('.result').innerHTML = '';
   document.querySelector('.player-score').innerHTML = playerScore;
   document.querySelector('.computer-score').innerHTML = computerScore;
 }
 
-function playRound(elem) {
+function playRound(event) {
   round++;
-  var moveOptions = [
+  const moveOptions = [
     'rock',
     'paper',
     'scissors'
-  ],
-  computerMove = moveOptions[Math.floor(Math.random() * moveOptions.length)];
+  ];
+  const computerMove = moveOptions[Math.floor(Math.random() * moveOptions.length)];
 
-  switch(elem.id) {
+  switch(event.target.id) {
     case 'rock':
 
       if (computerMove === 'paper') {
@@ -42,6 +42,7 @@ function playRound(elem) {
       }
       break;
     case 'paper':
+
       if (computerMove === 'scissors') {
         result = 'Scissors beats paper! You lose that round.';
         computerScore++;
@@ -55,6 +56,7 @@ function playRound(elem) {
       }
       break;
     case 'scissors':
+
       if (computerMove === 'rock') {
         result = 'Rock beats scissors! You lose that round.';
         computerScore++;
@@ -80,7 +82,7 @@ function playRound(elem) {
     document.querySelector('.start').innerHTML = 'Play Again';
   }
 
-  document.querySelector('.round').innerHTML = 'Round ' + round + ': Select Rock, Paper, or Scissors.';
+  document.querySelector('.round').innerHTML = `Round ${round}: Select Rock, Paper, or Scissors.`;
   document.querySelector('.result').innerHTML = result;
   document.querySelector('.player-score').innerHTML = playerScore;
   document.querySelector('.computer-score').innerHTML = computerScore;
@@ -88,12 +90,12 @@ function playRound(elem) {
 
 // EVENT LISTENERS
 
-document.querySelector('.start').addEventListener('click', function() {
+document.querySelector('.start').addEventListener('click', () => {
   startGame();
 });
 
-document.querySelectorAll('.move-options').forEach(function(button) {
-  button.addEventListener('click', function() {
-    playRound(this);
+document.querySelectorAll('.move-options').forEach(button => {
+  button.addEventListener('click', () => {
+    playRound(event);
   });
 });
