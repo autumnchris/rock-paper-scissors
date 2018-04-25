@@ -95,7 +95,7 @@ document.querySelector('.start').addEventListener('click', () => {
 });
 
 document.querySelectorAll('.move-options').forEach(button => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (event) => {
     playRound(event);
   });
 });
