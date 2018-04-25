@@ -6,10 +6,9 @@ My project for the [Rock Paper Scissors assignment](https://www.theodinproject.c
 
 ## Built With
 * JavaScript
-* CSS
-* HTML
+* CSS3
+* HTML5
 * [Font Awesome](https://fontawesome.com)
-* [Normalize.css](http://necolas.github.io/normalize.css)
 * [Google Fonts](https://fonts.google.com)
 
 ## Demo
