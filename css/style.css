@@ -39,7 +39,6 @@ main {
 }
 
 p {
-  font-size: 0.9rem;
   line-height: 1.2;
   margin: 15px 0;
 }
@@ -51,7 +50,6 @@ button:focus {
   background: #006699;
   border-radius: 3px;
   color: #fff;
-  font-size: 0.85rem;
   margin: 0 3px;
   padding: 10px;
   width: 80px;
@@ -116,7 +114,6 @@ table {
 th {
   background: #e6e6e6;
   border-bottom: 1px solid #333;
-  font-size: 0.9rem;
   font-weight: 600;
   padding: 6px 12px;
 }
