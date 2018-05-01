@@ -16,9 +16,9 @@ button,
 a,
 table,
 thead,
-th,
 tbody,
 tr,
+th,
 td {
   background: transparent;
   border: 0;
@@ -57,6 +57,10 @@ a:hover {
   text-decoration: underline;
 }
 
+span {
+  color: inherit;
+}
+
 button,
 button:hover,
 button:active,
@@ -67,4 +71,13 @@ button:focus {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+thead,
+tbody,
+tr,
+th,
+td,
+caption {
+  color: inherit;
 }
