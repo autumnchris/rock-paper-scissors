@@ -8,10 +8,6 @@ html {
   background: linear-gradient(120deg, rgba(153, 153, 153, 0.1), #fff) fixed;
 }
 
-body {
-  text-align: center;
-}
-
 header {
   padding-top: 3%;
 }
