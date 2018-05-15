@@ -1,24 +1,26 @@
-let round;
-let result;
-let playerScore;
-let computerScore;
+const gameStats = {
+  round: null,
+  result: null,
+  playerScore: null,
+  computerScore: null
+};
 
 // FUNCTIONS
 
 function startGame() {
   document.getElementById('modal').style.display = 'none';
-  round = 1;
-  playerScore = 0;
-  computerScore = 0;
+  gameStats.round = 1;
+  gameStats.playerScore = 0;
+  gameStats.computerScore = 0;
 
-  document.querySelector('.round').innerHTML = `Round ${round}: Select Rock, Paper, or Scissors.`;
+  document.querySelector('.round').innerHTML = `Round ${gameStats.round}: Select Rock, Paper, or Scissors.`;
   document.querySelector('.result').innerHTML = '';
-  document.querySelector('.player-score').innerHTML = playerScore;
-  document.querySelector('.computer-score').innerHTML = computerScore;
+  document.querySelector('.player-score').innerHTML = gameStats.playerScore;
+  document.querySelector('.computer-score').innerHTML = gameStats.computerScore;
 }
 
 function playRound(event) {
-  round++;
+  gameStats.round++;
   const moveOptions = [
     'rock',
     'paper',
@@ -30,50 +32,50 @@ function playRound(event) {
     case 'rock':
 
       if (computerMove === 'paper') {
-        result = 'Paper beats rock! You lose that round.';
-        computerScore++;
+        gameStats.result = 'Paper beats rock! You lose that round.';
+        gameStats.computerScore++;
       }
       else if (computerMove === 'scissors') {
-        result = 'Rock beats scissors! You win that round.';
-        playerScore++;
+        gameStats.result = 'Rock beats scissors! You win that round.';
+        gameStats.playerScore++;
       }
       else {
-        result = 'It\'s a draw!'
+        gameStats.result = 'It\'s a draw!'
       }
       break;
     case 'paper':
 
       if (computerMove === 'scissors') {
-        result = 'Scissors beats paper! You lose that round.';
-        computerScore++;
+        gameStats.result = 'Scissors beats paper! You lose that round.';
+        gameStats.computerScore++;
       }
       else if (computerMove === 'rock') {
-        result = 'Paper beats rock! You win that round.';
-        playerScore++;
+        gameStats.result = 'Paper beats rock! You win that round.';
+        gameStats.playerScore++;
       }
       else {
-        result = 'It\'s a draw!'
+        gameStats.result = 'It\'s a draw!'
       }
       break;
     case 'scissors':
 
       if (computerMove === 'rock') {
-        result = 'Rock beats scissors! You lose that round.';
-        computerScore++;
+        gameStats.result = 'Rock beats scissors! You lose that round.';
+        gameStats.computerScore++;
       }
       else if (computerMove === 'paper') {
-        result = 'Scissors beats paper! You win that round.';
-        playerScore++;
+        gameStats.result = 'Scissors beats paper! You win that round.';
+        gameStats.playerScore++;
       }
       else {
-        result = 'It\'s a draw!'
+        gameStats.result = 'It\'s a draw!'
       }
   }
 
-  if (playerScore === 5 || computerScore === 5) {
+  if (gameStats.playerScore === 5 || gameStats.computerScore === 5) {
     document.getElementById('modal').style.display = 'block';
 
-    if (playerScore === 5) {
+    if (gameStats.playerScore === 5) {
       document.querySelector('.modal-body p').innerHTML = 'Congratulations! You won 5 rounds before the computer did.';
     }
     else {
@@ -82,10 +84,10 @@ function playRound(event) {
     document.querySelector('.start').innerHTML = 'Play Again';
   }
 
-  document.querySelector('.round').innerHTML = `Round ${round}: Select Rock, Paper, or Scissors.`;
-  document.querySelector('.result').innerHTML = result;
-  document.querySelector('.player-score').innerHTML = playerScore;
-  document.querySelector('.computer-score').innerHTML = computerScore;
+  document.querySelector('.round').innerHTML = `Round ${gameStats.round}: Select Rock, Paper, or Scissors.`;
+  document.querySelector('.result').innerHTML = gameStats.result;
+  document.querySelector('.player-score').innerHTML = gameStats.playerScore;
+  document.querySelector('.computer-score').innerHTML = gameStats.computerScore;
 }
 
 // EVENT LISTENERS
