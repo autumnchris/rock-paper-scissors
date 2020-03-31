@@ -101,3 +101,5 @@ document.querySelectorAll('.move-options').forEach(button => {
     playRound(event);
   });
 });
+
+document.querySelector('.current-year').innerHTML = new Date().getFullYear();
