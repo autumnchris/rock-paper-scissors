@@ -8,6 +8,7 @@ My project for the [Rock Paper Scissors assignment](https://www.theodinproject.c
 * JavaScript
 * CSS3
 * HTML5
+* [Normalize.css](https://necolas.github.io/normalize.css)
 * [Font Awesome](https://fontawesome.com)
 * [Google Fonts](https://fonts.google.com)
 

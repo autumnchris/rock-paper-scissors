@@ -1,6 +1,6 @@
 const gameStats = {
-  round: null,
-  result: null,
+  roundNum: null,
+  roundResult: null,
   playerScore: null,
   computerScore: null
 };
@@ -9,66 +9,66 @@ const gameStats = {
 
 function startGame() {
   document.getElementById('modal').style.display = 'none';
-  gameStats.round = 1;
+  gameStats.roundNum = 1;
   gameStats.playerScore = 0;
   gameStats.computerScore = 0;
 
-  document.querySelector('.round').innerHTML = `Round ${gameStats.round}: Select Rock, Paper, or Scissors.`;
-  document.querySelector('.result').innerHTML = '';
+  document.querySelector('.round-num').innerHTML = `Round ${gameStats.roundNum}`;
+  document.querySelector('.round-result').innerHTML = '';
   document.querySelector('.player-score').innerHTML = gameStats.playerScore;
   document.querySelector('.computer-score').innerHTML = gameStats.computerScore;
 }
 
 function playRound(event) {
-  gameStats.round++;
-  const moveOptions = [
+  gameStats.roundNum++;
+  const playOptions = [
     'rock',
     'paper',
     'scissors'
   ];
-  const computerMove = moveOptions[Math.floor(Math.random() * moveOptions.length)];
+  const computerMove = playOptions[Math.floor(Math.random() * playOptions.length)];
 
   switch(event.target.id) {
     case 'rock':
 
       if (computerMove === 'paper') {
-        gameStats.result = 'Paper beats rock! You lose that round.';
+        gameStats.roundResult = 'Paper beats rock! You lose that round.';
         gameStats.computerScore++;
       }
       else if (computerMove === 'scissors') {
-        gameStats.result = 'Rock beats scissors! You win that round.';
+        gameStats.roundResult = 'Rock beats scissors! You win that round.';
         gameStats.playerScore++;
       }
       else {
-        gameStats.result = 'It\'s a draw!'
+        gameStats.roundResult = 'It\'s a draw!'
       }
       break;
     case 'paper':
 
       if (computerMove === 'scissors') {
-        gameStats.result = 'Scissors beats paper! You lose that round.';
+        gameStats.roundResult = 'Scissors beats paper! You lose that round.';
         gameStats.computerScore++;
       }
       else if (computerMove === 'rock') {
-        gameStats.result = 'Paper beats rock! You win that round.';
+        gameStats.roundResult = 'Paper beats rock! You win that round.';
         gameStats.playerScore++;
       }
       else {
-        gameStats.result = 'It\'s a draw!'
+        gameStats.roundResult = 'It\'s a draw!'
       }
       break;
     case 'scissors':
 
       if (computerMove === 'rock') {
-        gameStats.result = 'Rock beats scissors! You lose that round.';
+        gameStats.roundResult = 'Rock beats scissors! You lose that round.';
         gameStats.computerScore++;
       }
       else if (computerMove === 'paper') {
-        gameStats.result = 'Scissors beats paper! You win that round.';
+        gameStats.roundResult = 'Scissors beats paper! You win that round.';
         gameStats.playerScore++;
       }
       else {
-        gameStats.result = 'It\'s a draw!'
+        gameStats.roundResult = 'It\'s a draw!'
       }
   }
 
@@ -76,28 +76,28 @@ function playRound(event) {
     document.getElementById('modal').style.display = 'block';
 
     if (gameStats.playerScore === 5) {
-      document.querySelector('.modal-body p').innerHTML = 'Congratulations! You won 5 rounds before the computer did.';
+      document.querySelector('.modal-body p').innerHTML = 'Congratulations! You won 5 rounds before the computer.';
     }
     else {
       document.querySelector('.modal-body p').innerHTML = 'Too bad. The computer won 5 rounds before you.';
     }
-    document.querySelector('.start').innerHTML = 'Play Again';
+    document.querySelector('.start-button').innerHTML = 'Play Again';
   }
 
-  document.querySelector('.round').innerHTML = `Round ${gameStats.round}: Select Rock, Paper, or Scissors.`;
-  document.querySelector('.result').innerHTML = gameStats.result;
+  document.querySelector('.round-num').innerHTML = `Round ${gameStats.roundNum}`;
+  document.querySelector('.round-result').innerHTML = gameStats.roundResult;
   document.querySelector('.player-score').innerHTML = gameStats.playerScore;
   document.querySelector('.computer-score').innerHTML = gameStats.computerScore;
 }
 
 // EVENT LISTENERS
 
-document.querySelector('.start').addEventListener('click', () => {
+document.querySelector('.start-button').addEventListener('click', () => {
   startGame();
 });
 
-document.querySelectorAll('.move-options').forEach(button => {
-  button.addEventListener('click', (event) => {
+document.querySelectorAll('.play-option-button').forEach(button => {
+  button.addEventListener('click', event => {
     playRound(event);
   });
 });
