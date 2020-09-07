@@ -1,7 +1,8 @@
 import { Modal } from './modal';
 
 function renderApp() {
-   document.getElementById('app').innerHTML = `<header>
+   document.getElementById('app').innerHTML = `
+   <header>
     <h1>Rock! Paper! Scissors!</h1>
    </header>
    <main>
