@@ -6,7 +6,6 @@ My project for the [Rock Paper Scissors assignment](https://www.theodinproject.c
 
 ## Built With
 * JavaScript
-* CSS3
 * [Sass](http://sass-lang.com)
 * HTML5
 * [Webpack](https://webpack.js.org)
