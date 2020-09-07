@@ -4,55 +4,13 @@
     <meta charset="utf-8">
     <title>Rock Paper Scissors</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shadows+Into+Light">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="public/style.css">
   </head>
 
   <body>
-    <!-- HEADER -->
-    <header>
-      <h1>Rock! Paper! Scissors!</h1>
-      <h2>Select Rock, Paper, or Scissors.</h2>
-      <h3 class="round-num">Round 1</h3>
-    </header>
-    <main>
-      <!-- START GAME MODAL -->
-      <div class="modal" id="modal">
-        <div class="modal-content">
-          <div class="modal-body">
-            <p>See if you can win 5 rounds of Rock Paper Scissors against the computer. Click Start to begin.</p>
-            <button type="button" class="button start-button">Start</button>
-          </div>
-        </div>
-      </div>
-      <!-- MOVE OPTIONS -->
-      <div class="button-group play-options">
-        <button type="button" class="button play-option-button" id="rock"><span class="far fa-hand-rock fa-2x play-icon"></span>Rock</button>
-        <button type="button" class="button play-option-button" id="paper"><span class="far fa-hand-paper fa-2x play-icon"></span>Paper</button>
-        <button type="button" class="button play-option-button" id="scissors"><span class="far fa-hand-scissors fa-2x play-icon"></span>Scissors</button>
-      </div>
-      <!-- ROUND RESULT -->
-      <p class="round-result"></p>
-      <!-- SCORE TABLE -->
-      <table class="scoreboard">
-        <thead>
-          <tr>
-            <th>You</th>
-            <th>Computer</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="player-score">0</td>
-            <td class="computer-score">0</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
-    <!-- FOOTER -->
-    <footer>Created by <a href="https://autumnbullard-portfolio.herokuapp.com" target="_blank">Autumn Bullard</a> &copy; <span class="current-year"></span></footer>
-    <script src="js/script.js"></script>
+    <div id="app"></div>
+    <script src="public/bundle.js"></script>
   </body>
 </html>

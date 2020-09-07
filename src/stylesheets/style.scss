@@ -1,0 +1,218 @@
+@import "variables";
+
+// BASE PAGE STYLES
+
+html {
+  background: transparent;
+  box-sizing: border-box;
+  color: change-color($black, $lightness: 20%);
+  height: 100%;
+  letter-spacing: 1px;
+  text-align: center;
+  body {
+    background: change-color($black, $lightness: 100%);
+    background: linear-gradient(120deg, rgba(change-color($black, $lightness: 60%), 0.1), change-color($black, $lightness: 100%)) fixed;
+    min-height: 100%;
+    overscroll-behavior: none;
+    padding: 0 20px;
+    position: relative;
+    header {
+      padding: 40px 0 20px;
+    }
+    main {
+      padding-bottom: 6rem;
+    }
+    footer {
+      background: change-color($black, $lightness: 90%);
+      bottom: 0;
+      font-size: 0.8rem;
+      left: 0;
+      letter-spacing: 2px;
+      padding: 14px 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      box-sizing: border-box;
+      margin-top: 0;
+    }
+  }
+}
+
+// BASE ELEMENT STYLES
+
+div,
+header,
+main,
+footer,
+p,
+table,
+thead,
+tbody,
+tr,
+th,
+td,
+button,
+button:hover,
+button:active,
+button:focus {
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 1.3;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+a:focus,
+button:focus,
+details:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  box-shadow: 0 0 3px 3px hsla(203, 95%, 62%, 0.8);
+  outline: none;
+}
+
+.button,
+.button:visited,
+.button:hover,
+.button:active,
+.button:focus {
+  background: $blue;
+  border: 0;
+  border-radius: 4px;
+  color: change-color($black, $lightness: 100%);
+  cursor: pointer;
+  letter-spacing: 2px;
+  line-height: normal;
+  padding: 10px;
+  width: auto;
+  &:hover {
+    background: change-color($blue, $lightness: 27%);
+    text-decoration: none;
+  }
+}
+
+.button-group {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+// SPECIFIC ELEMENT STYLES
+
+h1 {
+  color: $blue;
+  font-family: $heading-font;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: $heading-font;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.modal {
+  background: rgba($black, 0.75);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  .modal-content {
+    animation: slideIn 0.3s ease-out;
+    background: change-color($black, $lightness: 100%);
+    border-radius: 5px;
+    margin: 10% auto 0;
+    max-width: 500px;
+    width: 80%;
+    .modal-body {
+      padding: 18px;
+      p {
+        font-size: 0.9rem;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.game-board {
+  .play-options {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    .play-option-button,
+    .play-option-button:hover,
+    .play-option-button:active,
+    .play-option-button:focus {
+      font-size: 0.9rem;
+      margin: 10px 5px 0;
+      padding: 10px 0;
+      width: 90px;
+      .play-icon {
+        display: block;
+        padding-bottom: 5px;
+        pointer-events: none;
+      }
+    }
+  }
+  .round-result {
+    font-style: italic;
+  }
+  .scoreboard {
+    margin: 30px auto 0;
+    th {
+      background: change-color($black, $lightness: 90%);
+      border-bottom: 1px solid change-color($black, $lightness: 20%);
+      padding: 6px 12px;
+    }
+    td {
+      font-size: 1.2rem;
+      padding: 6px;
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 10%;
+  }
+}
