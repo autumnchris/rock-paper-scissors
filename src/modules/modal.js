@@ -14,10 +14,6 @@ const Modal = (() => {
     </div>`;
 
     document.querySelector('main').insertBefore(modal, document.querySelector('.game-board'));
-
-    document.querySelector('.start-button').addEventListener('click', () => {
-      GameBoard.startGame();
-    });
   }
 
   function closeModal() {

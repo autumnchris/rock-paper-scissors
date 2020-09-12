@@ -76,10 +76,8 @@ const GameBoard = (() => {
     ];
     const computerMove = playOptions[Math.floor(Math.random() * playOptions.length)];
     const roundResult = document.querySelector('.round-result');
-
-    if (roundResult) {
-      document.querySelector('.game-board').removeChild(roundResult);
-    }
+    
+    roundResult ? document.querySelector('.game-board').removeChild(roundResult) : null;
     document.querySelector('.round-status').innerHTML = goToNewRound();
 
     determineWinner(event.target.id, computerMove);
@@ -120,12 +118,6 @@ const GameBoard = (() => {
         </tr>
       </tbody>
     </table>`;
-
-    document.querySelectorAll('.play-option-button').forEach(button => {
-      button.addEventListener('click', event => {
-        playRound(event);
-      });
-    });
   }
 
   function startGame() {
@@ -138,7 +130,8 @@ const GameBoard = (() => {
   }
 
   return {
-    startGame
+    startGame,
+    playRound
   };
 })();
 
