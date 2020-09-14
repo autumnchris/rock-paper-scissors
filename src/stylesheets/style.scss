@@ -125,6 +125,14 @@ textarea:focus,
   display: flex;
 }
 
+.message {
+  border-radius: 5px;
+  line-height: 1.55;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 15px 10px;
+}
+
 // SPECIFIC ELEMENT STYLES
 
 h1 {
@@ -206,6 +214,22 @@ h2 {
       padding: 6px;
     }
   }
+}
+
+.info-message {
+  background: change-color($info-blue, $lightness: 95%);
+  border: 1px solid change-color($info-blue, $lightness: 90%);
+  color: $info-blue;
+}
+
+noscript .info-message {
+  left: 50%;
+  margin: 0 auto;
+  min-width: 280px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes slideIn {
