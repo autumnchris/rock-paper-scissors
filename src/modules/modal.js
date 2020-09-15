@@ -17,7 +17,8 @@ const Modal = (() => {
   }
 
   function closeModal() {
-    document.querySelector('main').removeChild(document.getElementById('modal'));
+    const modal = document.getElementById('modal');
+    modal ? document.querySelector('main').removeChild(modal) : null;
   }
 
   return {
