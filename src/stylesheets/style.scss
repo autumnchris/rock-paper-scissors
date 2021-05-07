@@ -4,6 +4,7 @@
 
 html {
   background: transparent;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: change-color($black, $lightness: 20%);
   height: 100%;
@@ -11,8 +12,10 @@ html {
   text-align: center;
   body {
     background: change-color($black, $lightness: 100%);
+    background: -o-linear-gradient(330deg, rgba(change-color($black, $lightness: 60%), 0.1), change-color($black, $lightness: 100%)) fixed;
     background: linear-gradient(120deg, rgba(change-color($black, $lightness: 60%), 0.1), change-color($black, $lightness: 100%)) fixed;
     min-height: 100%;
+    -ms-scroll-chaining: none;
     overscroll-behavior: none;
     padding: 0 20px;
     position: relative;
@@ -39,6 +42,7 @@ html {
     h4,
     h5,
     h6 {
+      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       margin-top: 0;
     }
@@ -62,6 +66,7 @@ button,
 button:hover,
 button:active,
 button:focus {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -93,6 +98,7 @@ input:focus,
 select:focus,
 textarea:focus,
 [tabindex]:focus {
+  -webkit-box-shadow: 0 0 3px 3px hsla(203, 95%, 62%, 0.8);
   box-shadow: 0 0 3px 3px hsla(203, 95%, 62%, 0.8);
   outline: none;
 }
@@ -119,8 +125,6 @@ textarea:focus,
 
 .button-group {
   display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -161,6 +165,7 @@ h2 {
   width: 100%;
   z-index: 1;
   .modal-content {
+    -webkit-animation: slideIn 0.3s ease-out;
     animation: slideIn 0.3s ease-out;
     background: change-color($black, $lightness: 100%);
     border-radius: 5px;
@@ -180,9 +185,7 @@ h2 {
 .game-board {
   .play-options {
     -webkit-box-pack: center;
-    -moz-box-pack: center;
     -ms-flex-pack: center;
-    -webkit-justify-content: center;
     justify-content: center;
     .play-option-button,
     .play-option-button:hover,
@@ -229,7 +232,18 @@ noscript .info-message {
   position: absolute;
   text-align: center;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 10%;
+  }
 }
 
 @keyframes slideIn {
