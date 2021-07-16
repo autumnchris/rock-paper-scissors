@@ -1,7 +1,7 @@
 {
   "name": "rock-paper-scissors",
   "version": "1.0.0",
-  "description": "My project for the Rock Paper Scissors assignment as part of the curriculum for the Web Development 101 course on The Odin Project.",
+  "description": "A JavaScript game where the user plays Rock Paper Scissors against the computer. The first to beat the other in five rounds wins.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",

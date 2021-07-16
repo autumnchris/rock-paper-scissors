@@ -1,6 +1,8 @@
 # Rock Paper Scissors
 
-My project for the [Rock Paper Scissors assignment](https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors) as part of the curriculum for the [Web Development 101 course](https://www.theodinproject.com/courses/web-development-101) on [The Odin Project](https://www.theodinproject.com).
+A JavaScript game where the user plays Rock Paper Scissors against the computer. The first to beat the other in five rounds wins.
+
+Inspired by the [Rock Paper Scissors assignment](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) as part of the curriculum for the [Foundations course](https://www.theodinproject.com/paths/foundations/courses/foundations) on [The Odin Project](https://www.theodinproject.com).
 
 ---
 
