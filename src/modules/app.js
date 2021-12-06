@@ -11,7 +11,7 @@ const App = (() => {
      <main>
       <div class="game-board"></div>
      </main>
-     <footer>Created by <a href="https://autumnbullard-portfolio.herokuapp.com" target="_blank">Autumn Bullard</a> &copy; ${new Date().getFullYear()}</footer>`;
+     <footer>Created by <a href="https://autumnchris.github.io/portfolio" target="_blank">Autumn Bullard</a> &copy; ${new Date().getFullYear()}</footer>`;
 
      Modal.openModal('See if you can win 5 rounds of Rock Paper Scissors against the computer. Click Start to begin.', 'Start');
 
