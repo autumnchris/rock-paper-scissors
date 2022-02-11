@@ -107,8 +107,8 @@ const GameBoard = (() => {
     <table class="scoreboard">
       <thead>
         <tr>
-          <th>You</th>
-          <th>Computer</th>
+          <th scope="col">You</th>
+          <th scope="col">Computer</th>
         </tr>
       </thead>
       <tbody>
