@@ -1,0 +1,114 @@
+// STYLES FOR PAGE'S MAIN CONTENT
+
+// Button styles
+.button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.button,
+.button:visited,
+.button:hover,
+.button:active,
+.button:focus {
+  background: $blue;
+  border: 0;
+  border-radius: 4px;
+  color: change-color($black, $lightness: 100%);
+  cursor: pointer;
+  letter-spacing: 2px;
+  line-height: normal;
+  padding: 10px;
+  width: auto;
+  &:hover {
+    background: change-color($blue, $lightness: 27%);
+    text-decoration: none;
+  }
+}
+
+// Game board styles
+.game-board {
+  .play-options {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    .play-option-button,
+    .play-option-button:hover,
+    .play-option-button:active,
+    .play-option-button:focus {
+      font-size: 0.9rem;
+      margin: 10px 5px 0;
+      padding: 10px 0;
+      width: 90px;
+      .play-icon {
+        display: block;
+        padding-bottom: 5px;
+        pointer-events: none;
+      }
+    }
+  }
+  .round-result {
+    font-style: italic;
+  }
+  .scoreboard {
+    margin: 30px auto 0;
+    th {
+      background: change-color($black, $lightness: 90%);
+      border-bottom: 1px solid change-color($black, $lightness: 20%);
+      padding: 6px 12px;
+    }
+    td {
+      font-size: 1.2rem;
+      padding: 6px;
+    }
+  }
+}
+
+// Modal styles
+.modal {
+  background: rgba($black, 0.75);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  .modal-content {
+    -webkit-animation: slideIn 0.3s ease-out;
+    animation: slideIn 0.3s ease-out;
+    background: change-color($black, $lightness: 100%);
+    border-radius: 5px;
+    margin: 10% auto 0;
+    max-width: 500px;
+    width: 80%;
+    .modal-body {
+      padding: 18px;
+      p {
+        font-size: 0.9rem;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 10%;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 10%;
+  }
+}
