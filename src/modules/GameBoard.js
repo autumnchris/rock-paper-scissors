@@ -1,4 +1,4 @@
-import { Modal } from './modal';
+import { Modal } from './Modal';
 
 const GameBoard = (() => {
   let roundStatus;
