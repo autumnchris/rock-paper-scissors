@@ -100,9 +100,9 @@ const GameBoard = (() => {
     <h2 class="round-status">Round ${roundStatus}</h2>
     <p class="round-instructions">Select Rock, Paper, or Scissors.</p>
     <div class="button-group play-options">
-      <button type="button" class="button play-option-button" id="rock"><span class="far fa-hand-rock fa-2x play-icon"></span>Rock</button>
-      <button type="button" class="button play-option-button" id="paper"><span class="far fa-hand-paper fa-2x play-icon"></span>Paper</button>
-      <button type="button" class="button play-option-button" id="scissors"><span class="far fa-hand-scissors fa-2x play-icon"></span>Scissors</button>
+      <button type="button" class="button play-option-button" id="rock"><span class="far fa-hand-rock fa-2x play-icon" aria-hidden="true"></span>Rock</button>
+      <button type="button" class="button play-option-button" id="paper"><span class="far fa-hand-paper fa-2x play-icon" aria-hidden="true"></span>Paper</button>
+      <button type="button" class="button play-option-button" id="scissors"><span class="far fa-hand-scissors fa-2x play-icon" aria-hidden="true"></span>Scissors</button>
     </div>
     <table class="scoreboard">
       <thead>
