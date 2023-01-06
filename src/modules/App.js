@@ -1,4 +1,4 @@
-import { Modal } from './modal';
+import { Modal } from './Modal';
 import { GameBoard } from './GameBoard';
 
 const App = (() => {
