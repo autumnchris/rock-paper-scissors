@@ -1,42 +1,20 @@
-import { Modal } from './Modal';
+import Modal from './Modal';
 
-const GameBoard = (() => {
-  let roundStatus;
-  let playerScore;
-  let computerScore;
-
-  function resetGameBoard() {
-    roundStatus = 1;
-    playerScore = 0;
-    computerScore = 0;
+class GameBoard {
+  constructor() {
+    this.modal = new Modal();
+    this.roundStatus = 1;
+    this.playerScore = 0;
+    this.computerScore = 0;
   }
 
-  function goToNewRound() {
-    roundStatus++;
-    return `Round ${roundStatus}`;
+  resetGameBoard() {
+    this.roundStatus = 1;
+    this.playerScore = 0;
+    this.computerScore = 0;
   }
 
-  function renderRoundResult(resultText) {
-    const roundResult = document.createElement('p');
-    roundResult.classList.add('round-result');
-    roundResult.innerHTML = resultText;
-
-    document.querySelector('.game-board').insertBefore(roundResult, document.querySelector('.scoreboard'));
-  }
-
-  function addScorePoint(roundWinner) {
-
-    if (roundWinner === 'player') {
-      playerScore++;
-      return playerScore;
-    }
-    else {
-      computerScore++;
-      return computerScore;
-    }
-  }
-
-  function determineWinner(playerMove, computerMove) {
+  determineRoundWinner(playerMove, computerMove) {
     const winningPlay = {
       rock: 'scissors',
       paper: 'rock',
@@ -45,9 +23,10 @@ const GameBoard = (() => {
     let winner;
     let loser;
     let doesPlayerWin;
+    let roundResultText;
 
     if (playerMove === computerMove) {
-      renderRoundResult('It\'s a draw!');
+      roundResultText = 'It\'s a draw!';
     }
     else {
 
@@ -55,56 +34,76 @@ const GameBoard = (() => {
         winner = playerMove;
         loser = computerMove;
         doesPlayerWin = true;
-        document.querySelector('.player-score').innerHTML = addScorePoint('player');
+        this.playerScore++;
       }
-      else {
+      else if (winningPlay[computerMove] === playerMove) {
         winner = computerMove;
         loser = playerMove;
         doesPlayerWin = false;
-        document.querySelector('.computer-score').innerHTML = addScorePoint('computer');
+        this.computerScore++;
       }
       winner = winner.charAt(0).toUpperCase() + winner.slice(1);
-      renderRoundResult(`${winner} beats ${loser}! You ${doesPlayerWin ? 'win' : 'lose'} that round.`);
+      roundResultText = `${winner} beats ${loser}! You ${doesPlayerWin ? 'win' : 'lose'} that round.`;
     }
+    this.renderGameBoardUpdates(roundResultText);
   }
 
-  function playRound(event) {
+  playRound(event) {
     const playOptions = [
       'rock',
       'paper',
       'scissors'
     ];
     const computerMove = playOptions[Math.floor(Math.random() * playOptions.length)];
-    const roundResult = document.querySelector('.round-result');
-    
-    roundResult ? document.querySelector('.game-board').removeChild(roundResult) : null;
-    document.querySelector('.round-status').innerHTML = goToNewRound();
+    this.roundStatus++;
+    this.determineRoundWinner(event.target.id, computerMove);
 
-    determineWinner(event.target.id, computerMove);
-
-    if (playerScore === 5 || computerScore === 5) {
-
-      if (playerScore === 5) {
-        endGame('Congratulations! You won 5 rounds before the computer.');
-      }
-      else {
-        endGame('Too bad. The computer won 5 rounds before you.');
-      }
+    if (this.playerScore === 5) {
+      this.endGame('Congratulations! You won 5 rounds before the computer.');
+    }
+    else if (this.computerScore === 5) {
+      this.endGame('Too bad. The computer won 5 rounds before you.');
     }
   }
 
-  function renderGameBoard() {
-    resetGameBoard();
+  startGame() {
+    this.resetGameBoard();
+    this.removeGameBoard('main');
+    this.renderGameBoard('main');
+    this.modal.removeModal('main');
+  }
 
-    document.querySelector('.game-board').innerHTML = `
-    <h2 class="round-status">Round ${roundStatus}</h2>
-    <p class="round-instructions">Select Rock, Paper, or Scissors.</p>
-    <div class="button-group play-options">
-      <button type="button" class="button play-option-button" id="rock"><span class="far fa-hand-rock fa-2x play-icon" aria-hidden="true"></span>Rock</button>
-      <button type="button" class="button play-option-button" id="paper"><span class="far fa-hand-paper fa-2x play-icon" aria-hidden="true"></span>Paper</button>
-      <button type="button" class="button play-option-button" id="scissors"><span class="far fa-hand-scissors fa-2x play-icon" aria-hidden="true"></span>Scissors</button>
-    </div>
-    <table class="scoreboard">
+  endGame(endGameMessage) {
+    this.modal.renderModal(endGameMessage, 'Play Again', 'main');
+  }
+
+  // DOM methods
+  renderGameBoardUpdates(roundResultText) {
+    const roundStatus = document.querySelector('.round-status');
+    roundStatus.innerHTML = `Round ${this.roundStatus}`;
+
+    this.removeRoundResult('.game-board');
+    this.removeScoreboard('.game-board');
+    this.renderRoundResult(roundResultText, '.game-board')
+    this.renderScoreboard('.game-board');
+  }
+
+  renderRoundResult(roundResultText, location) {
+    const roundResult = document.createElement('p');
+    roundResult.classList.add('round-result');
+    roundResult.innerHTML = roundResultText;
+    document.querySelector(location).appendChild(roundResult);
+  }
+
+  removeRoundResult(location) {
+    const roundResult = document.querySelector(`${location} .round-result`);
+    roundResult ? document.querySelector(location).removeChild(roundResult) : null;
+  }
+
+  renderScoreboard(location) {
+    const scoreboard = document.createElement('table');
+    scoreboard.classList.add('scoreboard');
+    scoreboard.innerHTML = `
       <thead>
         <tr>
           <th scope="col">You</th>
@@ -113,26 +112,39 @@ const GameBoard = (() => {
       </thead>
       <tbody>
         <tr>
-          <td class="player-score">${playerScore}</td>
-          <td class="computer-score">${computerScore}</td>
+          <td class="player-score">${this.playerScore}</td>
+          <td class="computer-score">${this.computerScore}</td>
         </tr>
       </tbody>
-    </table>`;
+    `;
+    document.querySelector(location).appendChild(scoreboard);
   }
 
-  function startGame() {
-    renderGameBoard();
-    Modal.closeModal();
+  removeScoreboard(location) {
+    const scoreboard = document.querySelector(`${location} .scoreboard`);
+    scoreboard ? document.querySelector(location).removeChild(scoreboard) : null;
   }
 
-  function endGame(endGameMessage) {
-    Modal.openModal(endGameMessage, 'Play Again');
+  renderGameBoard(location) {
+    const gameBoard = document.createElement('div');
+    gameBoard.classList.add('game-board');
+    gameBoard.innerHTML = `
+      <h2 class="round-status">Round ${this.roundStatus}</h2>
+      <p class="round-instructions">Select Rock, Paper, or Scissors.</p>
+      <div class="button-group play-options">
+        <button type="button" class="button play-option-button" id="rock"><span class="far fa-hand-rock fa-2x play-icon" aria-hidden="true"></span>Rock</button>
+        <button type="button" class="button play-option-button" id="paper"><span class="far fa-hand-paper fa-2x play-icon" aria-hidden="true"></span>Paper</button>
+        <button type="button" class="button play-option-button" id="scissors"><span class="far fa-hand-scissors fa-2x play-icon" aria-hidden="true"></span>Scissors</button>
+      </div>
+    `;
+    document.querySelector(location).appendChild(gameBoard);
+    this.renderScoreboard('.game-board');
   }
 
-  return {
-    startGame,
-    playRound
-  };
-})();
+  removeGameBoard(location) {
+    const gameBoard = document.querySelector(`${location} .game-board`);
+    gameBoard ? document.querySelector(location).removeChild(gameBoard) : null;
+  }
+}
 
-export { GameBoard };
+export default GameBoard;
