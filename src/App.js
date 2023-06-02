@@ -10,7 +10,6 @@ class App {
     this.modal = new Modal();
     this.gameBoard = new GameBoard();
     this.renderApp();
-    this.events();
   }
 
   // Event listeners
@@ -28,6 +27,7 @@ class App {
     this.renderMain('#app');
     this.footer.renderFooter('#app');
     this.modal.renderModal('See if you can win 5 rounds of Rock Paper Scissors against the computer. Click Start to begin.', 'Start', 'main');
+    this.events();
   }
 
   renderMain(location) {
