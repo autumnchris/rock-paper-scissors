@@ -2,7 +2,7 @@
 
 A JavaScript game where the user plays Rock Paper Scissors against the computer. The first to beat the other in five rounds wins.
 
-Inspired by the [Rock Paper Scissors assignment](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) as part of the curriculum for the [Foundations course](https://www.theodinproject.com/paths/foundations/courses/foundations) on [The Odin Project](https://www.theodinproject.com).
+Inspired by the [Rock Paper Scissors assignment](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) as part of the curriculum for the [Foundations Course](https://www.theodinproject.com/paths/foundations/courses/foundations) on [The Odin Project](https://www.theodinproject.com).
 
 ---
 
