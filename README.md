@@ -7,9 +7,12 @@ Inspired by the [Rock Paper Scissors assignment](https://www.theodinproject.com/
 ---
 
 ## Built With
+* Vanilla JS
 * JavaScript
 * [Sass](http://sass-lang.com)
+* CSS3
 * HTML5
+* [Node.js](https://nodejs.org/en)
 * [Webpack](https://webpack.js.org)
 * [Babel](https://babeljs.io)
 * [Normalize.css](https://necolas.github.io/normalize.css)
