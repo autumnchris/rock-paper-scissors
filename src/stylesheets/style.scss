@@ -68,9 +68,8 @@ a:hover,
 a:active,
 a:focus {
   color: $blue;
-  text-decoration: none;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
