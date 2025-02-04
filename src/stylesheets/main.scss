@@ -20,6 +20,7 @@
   letter-spacing: 2px;
   line-height: normal;
   padding: 10px;
+  text-decoration: none;
   width: auto;
   &:hover {
     background: change-color($blue, $lightness: 27%);
